@@ -86,8 +86,8 @@ export default class Input extends React.Component {
             return;
         }
         
-        this.state.value.push(event.key)
         this.setState({
+            value: this.state.value.concat(event.key),
             caretPosition: ++this.state.caretPosition,
             isAllSelection: false
         });
@@ -110,8 +110,10 @@ export default class Input extends React.Component {
                 return;
             }
 
-            this.state.value.splice(this.state.caretPosition - 1, 1);
+            const clone = this.state.value.slice();
+            clone.splice(this.state.caretPosition - 1, 1)
             this.setState({
+                value: clone,
                 caretPosition: --this.state.caretPosition
             });
         }

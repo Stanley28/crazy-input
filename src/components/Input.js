@@ -50,7 +50,7 @@ export default class Input extends React.Component {
                 id={this.props.id} 
                 className={inputClasses}
             >
-                <div class='crazy-input__value'>
+                <div className='crazy-input__value'>
                     <span className='crazy-input__selection-overlay'></span>
                     {value}   
                 </div>

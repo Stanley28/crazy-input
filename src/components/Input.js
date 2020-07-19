@@ -88,7 +88,7 @@ export default class Input extends React.Component {
         
         this.setState({
             value: this.state.value.concat(event.key),
-            caretPosition: ++this.state.caretPosition,
+            caretPosition: this.state.caretPosition + 1,
             isAllSelection: false
         });
     }
@@ -114,7 +114,7 @@ export default class Input extends React.Component {
             clone.splice(this.state.caretPosition - 1, 1)
             this.setState({
                 value: clone,
-                caretPosition: --this.state.caretPosition
+                caretPosition: this.state.caretPosition - 1
             });
         }
 
@@ -122,7 +122,7 @@ export default class Input extends React.Component {
         if (event.keyCode === 39) {
             if (this.state.caretPosition < this.state.value.length) {
                 this.setState({
-                    caretPosition: ++this.state.caretPosition,
+                    caretPosition: this.state.caretPosition + 1,
                     isAllSelection: false
                 });
             }
@@ -132,7 +132,7 @@ export default class Input extends React.Component {
         if (event.keyCode === 37) {
             if (this.state.caretPosition > 0) {
                 this.setState({
-                    caretPosition: --this.state.caretPosition,
+                    caretPosition: this.state.caretPosition - 1,
                     isAllSelection: false
                 });
             }

@@ -61,7 +61,7 @@ export default class Input extends React.Component {
     componentWillUnmount() {
         window.removeEventListener('click', this.onClick);
         window.removeEventListener('keypress', this.onKeyPress);
-        window.removeEventListenerListener('keydown', this.onKeyDown);
+        window.removeEventListener('keydown', this.onKeyDown);
     }
 
     onClick(event) {
